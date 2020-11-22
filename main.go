@@ -1,14 +1,35 @@
 package main
 
 import (
-	"github.com/briandowns/spinner"
-	"time"
+	"io"
+	"log"
+	"fmt"
+	"os/exec"
+	"encoding/json"
 )
 
-func main() {
-	s := spinner.New(spinner.CharSets[14], 100*time.Millisecond)  // Build our new spinner
-	s.Start()                                                    // Start the spinner
-	time.Sleep(4 * time.Second)                                  // Run for some time to simulate work
-	s.Stop()
-	listaccounts()
+type Account struct {
+	Id			string	`json:"id"`
+	IsDefault	bool	`json:"isDefault"`
+	Name		string	`json:"name"`
+}
+
+func main() {	
+	filtered := withFilter("fzf", func(in io.WriteCloser) {
+		list, err := exec.Command("az", "account", "list").Output()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		var account []Account
+
+		if err := json.Unmarshal([]byte(list), &account); err != nil {
+			panic(err)
+		}
+
+		for _, account := range account {
+			fmt.Fprintf(in, "%s: %s\n", account.Id, account.Name)
+		}
+    })
+	setaccount(filtered)
 }
