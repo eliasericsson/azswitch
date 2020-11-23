@@ -15,10 +15,18 @@ builds:
       - amd64
       - arm
       - arm64
-      - ppc64le
     goarm: [6, 7]
 archives:
   - id: azswitch
     builds:
       - azswitch
-    format: zip
+    format_overrides:
+      - goos: windows
+        format: zip
+      - goos: darwin
+        format: zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    replacements:
+      amd64: 64-bit
+      386: 32-bit
+      darwin: macOS
