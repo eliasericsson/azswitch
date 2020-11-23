@@ -25,7 +25,7 @@ archives:
         format: zip
       - goos: darwin
         format: zip
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"    replacements:
+    replacements:
       amd64: 64-bit
       386: 32-bit
       darwin: macOS
