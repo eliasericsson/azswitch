@@ -22,7 +22,6 @@ func main() {
 		}
 
 		var account []Account
-
 		if err := json.Unmarshal([]byte(list), &account); err != nil {
 			panic(err)
 		}
@@ -30,6 +29,6 @@ func main() {
 		for _, account := range account {
 			fmt.Fprintf(in, "%s: %s\n", account.Id, account.Name)
 		}
-    })
+	})
 	setaccount(filtered)
 }
