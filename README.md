@@ -1,5 +1,5 @@
 ![CI](https://github.com/eliasericsson/azswitch/workflows/CI/badge.svg?branch=main)
-![Release](https://github.com/eliasericsson/azswitch/workflows/Release/badge.svg?branch=main&event=release)
+![Release](https://github.com/eliasericsson/azswitch/workflows/Release/badge.svg)
 # azswitch
 Switch quicker between Azure subscriptions
 
