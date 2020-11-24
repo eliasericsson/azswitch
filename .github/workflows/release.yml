@@ -61,6 +61,10 @@ jobs:
           $var = "${{ steps.strip.outputs.version }}"
           $nuspec = Get-Content ./azswitch.nuspec | %{ $_ -replace '__VERSION__',$var }
           $nuspec | Out-File -Encoding utf8 azswitch.nuspec
+          
+      - name: Add binary license
+        shell: pwsh
+        run: cp ./LICENSE ./tools/LICENSE
 
       - uses: actions/download-artifact@v2
         with:
