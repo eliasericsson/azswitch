@@ -1,7 +1,6 @@
 ![CI](https://github.com/eliasericsson/azswitch/workflows/CI/badge.svg?branch=main)
 ![Release](https://github.com/eliasericsson/azswitch/workflows/Release/badge.svg)
-# azswitch
-### [az swɪ́tʃ]
+# azswitch `[az swɪ́tʃ]`
 Switch quicker between Azure subscriptions
 
 ## Requirements
