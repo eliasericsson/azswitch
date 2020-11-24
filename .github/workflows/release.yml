@@ -67,6 +67,11 @@ jobs:
           name: windowsrelease
           path: tools
 
+      - name: Choco pack
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: pack
+
       - name: Choco API
         uses: crazy-max/ghaction-chocolatey@v1
         with:
