@@ -3,27 +3,76 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      -
-        name: Set up Go
+
+      - name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: 1.15
-      -
-        name: Run GoReleaser
+
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
           version: latest
           args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: windowsrelease
+          path: dist/azswitch_windows_amd64/azswitch.exe
+
+  chocolatey:
+    needs: goreleaser
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set outputs
+        id: vars
+        shell: pwsh
+        run: |
+          echo "::set-output name=tag::v0.1.4"
+
+      - name: Strip version
+        id: strip
+        shell: pwsh
+        run: |
+          $var = "${{ steps.vars.outputs.tag }}"
+          $out = $var -replace '[A-Za-z]'
+          echo "::set-output name=version::$($out)"
+
+      - name: Replace nuspec version
+        shell: pwsh
+        run: |
+          $var = "${{ steps.strip.outputs.version }}"
+          $nuspec = Get-Content ./azswitch.nuspec | %{ $_ -replace '__VERSION__',$var }
+          $nuspec | Out-File -Encoding utf8 azswitch.nuspec
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: windowsrelease
+          path: tools
+
+      - name: Choco API
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: apikey --key ${{ secrets.CHOCOLATEY_API }} --source https://push.chocolatey.org/
+
+      - name: Choco push
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: push azswitch.nuspec --source https://push.chocolatey.org/
