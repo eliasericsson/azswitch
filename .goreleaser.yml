@@ -33,8 +33,7 @@ scoop:
   url_template: "https://github.com/eliasericsson/azswitch/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
   bucket:
     owner: eliasericsson
-    name: scoop-bucket
+    name: azswitch
   commit_msg_template: "Scoop update for {{ .ProjectName }} version {{ .Tag }}"
   description: "Switch Azure subscriptions faster."
   license: GPL2
-  
