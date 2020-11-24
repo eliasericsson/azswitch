@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>azswitch</id>
+    <version>__VERSION__</version>
+    <title>azswitch</title>
+    <authors>Elias Ericsson-Rydberg</authors>
+    <projectUrl>https://github.com/eliasericsson/azswitch</projectUrl>
+    <licenseUrl>https://github.com/eliasericsson/azswitch/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/eliasericsson/azswitch</projectSourceUrl>
+    <docsUrl>https://github.com/eliasericsson/azswitch/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/eliasericsson/azswitch/issues</bugTrackerUrl>
+    <tags>azswitch azure</tags>
+    <summary>Switch between subscriptions faster</summary>
+    <description>Utility to enable you to switch between your Azure subscriptions quicker than AzCLI</description>
+    <dependencies>
+      <dependency id="azure-cli" />
+      <dependency id="fzf" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
