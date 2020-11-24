@@ -80,4 +80,4 @@ jobs:
       - name: Choco push
         uses: crazy-max/ghaction-chocolatey@v1
         with:
-          args: push azswitch.nuspec --source https://push.chocolatey.org/
+          args: push azswitch.${{ steps.strip.outputs.version }}.nupkg --source https://push.chocolatey.org/
