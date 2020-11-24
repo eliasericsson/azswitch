@@ -4,8 +4,8 @@
 Switch quicker between Azure subscriptions
 
 ## Requirements
-* Azure CLI - [installation instructions](https://docs.microsoft.com/sv-se/cli/azure/install-azure-cli)
-* fzf - [installation instructions](https://github.com/junegunn/fzf)
+* Azure CLI - [installation instructions](https://docs.microsoft.com/sv-se/cli/azure/install-azure-cli#install)
+* fzf - [installation instructions](https://github.com/junegunn/fzf#installation)
 
 ## Installation
 * [Linux](#ubuntu/debian/arch)
