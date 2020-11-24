@@ -66,6 +66,6 @@ jobs:
           args: apikey --key ${{ secrets.CHOCOLATEY_API }} --source https://push.chocolatey.org/
 
       - name: Choco push
-        uses: crazy-max/ghaction-chocolatey
+        uses: crazy-max/ghaction-chocolatey@1
         with:
           args: push azswitch.nupkg --source https://push.chocolatey.org/
