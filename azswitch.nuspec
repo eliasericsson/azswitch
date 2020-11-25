@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/eliasericsson/azswitch/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/eliasericsson/azswitch</projectSourceUrl>
-    <docsUrl>https://github.com/eliasericsson/azswitch/README.md</docsUrl>
+    <docsUrl>https://github.com/eliasericsson/azswitch/blob/main/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/eliasericsson/azswitch/issues</bugTrackerUrl>
     <tags>azswitch azure</tags>
     <summary>Switch between subscriptions faster</summary>
