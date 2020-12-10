@@ -1,7 +1,6 @@
-![GitHub all releases](https://img.shields.io/github/downloads/eliasericsson/azswitch/total?style=social)
-
 ![CI](https://github.com/eliasericsson/azswitch/workflows/CI/badge.svg?branch=main)
 ![Release](https://github.com/eliasericsson/azswitch/workflows/Release/badge.svg)
+![GitHub all releases](https://img.shields.io/github/downloads/eliasericsson/azswitch/total?style=social&link=https://github.com/eliasericsson/azswitch/releases)
 # azswitch `[az swɪ́tʃ]`
 Switch quicker between Azure subscriptions
 
