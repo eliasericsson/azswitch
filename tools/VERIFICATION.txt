@@ -10,4 +10,4 @@ in verifying that this package's contents are trustworthy.
   - Use chocolatey utility 'checksum.exe'
 3. The checksums in the text file should match the hash of the zip file.
 
-The file 'LICENSE.txt' has been obtained from <https://raw.githubusercontent.com/eliasericsson/azswitch/main/LICENSE>
+The file 'LICENSE.txt' has been obtained from <https://raw.githubusercontent.com/eliasericsson/azswitch/main/LICENSE.txt>
