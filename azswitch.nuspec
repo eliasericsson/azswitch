@@ -6,7 +6,7 @@
     <title>azswitch</title>
     <authors>Elias Ericsson-Rydberg</authors>
     <projectUrl>https://github.com/eliasericsson/azswitch</projectUrl>
-    <licenseUrl>https://github.com/eliasericsson/azswitch/blob/main/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/eliasericsson/azswitch/main/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/eliasericsson/azswitch</projectSourceUrl>
     <docsUrl>https://github.com/eliasericsson/azswitch/blob/main/README.md</docsUrl>
