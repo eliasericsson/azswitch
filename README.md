@@ -27,6 +27,19 @@ tar -xvf azswitch_0.1.4_linux_amd64.tar.gz
 mv azswitch /usr/local/bin/
 ```
 
+### macOS
+```zsh
+#Download the latest release
+curl -LJO https://github.com/eliasericsson/azswitch/releases/download/v0.1.4/azswitch_0.1.4_macOS_64-bit.zip
+
+#Extract the archive contents
+unzip azswitch_0.1.4_macOS_64-bit.zip
+
+#Move the binary to a directory in your path
+mv azswitch ${HOME}/.local/bin
+```
+
+
 ### Windows
 #### Chocolatey
 Install using the Chocolatey package manager, will also install the required dependencies:
